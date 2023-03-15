@@ -554,6 +554,36 @@ do
     $sat13Data.ingressSummary+$sat11Data.ingressSummary+$sat10Data.ingressSummary+$sat9Data.ingressSummary+$sat8Data.ingressSummary+
     $sat6Data.ingressSummary+$sat5Data.ingressSummary+$sat3Data.ingressSummary+$sat2Data.ingressSummary+$sat1Data.ingressSummary)/1000000000))-NoNewline
 
+    #TOTAL CURRENT PAYOUT
+    Write-Host "`t    " ([math]::round(($pay50Data.currentMonth.payout+$pay49Data.currentMonth.payout+$pay48Data.currentMonth.payout+$pay47Data.currentMonth.payout+
+    $pay46Data.currentMonth.payout+$pay43Data.currentMonth.payout+$pay42Data.currentMonth.payout+$pay41Data.currentMonth.payout+$pay40Data.currentMonth.payout+
+    $pay38Data.currentMonth.payout+$pay37Data.currentMonth.payout+$pay34Data.currentMonth.payout+$pay31Data.currentMonth.payout+$pay30Data.currentMonth.payout+
+    $pay29Data.currentMonth.payout+$pay28Data.currentMonth.payout+$pay27Data.currentMonth.payout+$pay26Data.currentMonth.payout+$pay25Data.currentMonth.payout+
+    $pay22Data.currentMonth.payout+$pay19Data.currentMonth.payout+$pay18Data.currentMonth.payout+$pay17Data.currentMonth.payout+$pay14Data.currentMonth.payout+
+    $pay13Data.currentMonth.payout+$pay11Data.currentMonth.payout+$pay10Data.currentMonth.payout+$pay9Data.currentMonth.payout+$pay8Data.currentMonth.payout+
+    $pay6Data.currentMonth.payout+$pay5Data.currentMonth.payout+$pay3Data.currentMonth.payout+$pay2Data.currentMonth.payout+$pay1Data.currentMonth.payout)/100)) -NoNewline
+
+    #TOTAL PREVIOUS
+    Write-Host "`t    " ([math]::round(($pay50Data.previousMonth.payout+$pay49Data.previousMonth.payout+$pay48Data.previousMonth.payout+$pay47Data.previousMonth.payout+
+    $pay46Data.previousMonth.payout+$pay43Data.previousMonth.payout+$pay42Data.previousMonth.payout+$pay41Data.previousMonth.payout+$pay40Data.previousMonth.payout+
+    $pay38Data.previousMonth.payout+$pay37Data.previousMonth.payout+$pay34Data.previousMonth.payout+$pay31Data.previousMonth.payout+$pay30Data.previousMonth.payout+
+    $pay29Data.previousMonth.payout+$pay28Data.previousMonth.payout+$pay27Data.previousMonth.payout+$pay26Data.previousMonth.payout+$pay25Data.previousMonth.payout+
+    $pay22Data.previousMonth.payout+$pay19Data.previousMonth.payout+$pay18Data.previousMonth.payout+$pay17Data.previousMonth.payout+$pay14Data.previousMonth.payout+
+    $pay13Data.previousMonth.payout+$pay11Data.previousMonth.payout+$pay10Data.previousMonth.payout+$pay9Data.previousMonth.payout+$pay8Data.previousMonth.payout+
+    $pay6Data.previousMonth.payout+$pay5Data.previousMonth.payout+$pay3Data.previousMonth.payout+$pay2Data.previousMonth.payout+$pay1Data.previousMonth.payout)/100)) -NoNewline
+
+    #TOTAL EXPECTED
+    Write-Host "`t    " ([math]::round(($pay50Data.currentMonthExpectations+$pay49Data.currentMonthExpectations+$pay48Data.currentMonthExpectations+
+    $pay47Data.currentMonthExpectations+$pay46Data.currentMonthExpectations+$pay43Data.currentMonthExpectations+$pay42Data.currentMonthExpectations+
+    $pay41Data.currentMonthExpectations+$pay40Data.currentMonthExpectations+$pay38Data.currentMonthExpectations+$pay37Data.currentMonthExpectations+
+    $pay34Data.currentMonthExpectations+$pay31Data.currentMonthExpectations+$pay30Data.currentMonthExpectations+$pay29Data.currentMonthExpectations+
+    $pay28Data.currentMonthExpectations+$pay27Data.currentMonthExpectations+$pay26Data.currentMonthExpectations+$pay25Data.currentMonthExpectations+
+    $pay22Data.currentMonthExpectations+$pay19Data.currentMonthExpectations+$pay18Data.currentMonthExpectations+$pay17Data.currentMonthExpectations+
+    $pay14Data.currentMonthExpectations+$pay13Data.currentMonthExpectations+$pay11Data.currentMonthExpectations+$pay10Data.currentMonthExpectations+
+    $pay9Data.currentMonthExpectations+$pay8Data.currentMonthExpectations+$pay6Data.currentMonthExpectations+$pay5Data.currentMonthExpectations+
+    $pay3Data.currentMonthExpectations+$pay2Data.currentMonthExpectations+$pay1Data.currentMonthExpectations)/100))
+
+
 
 	Write-Host ""
 	Write-Host ""
