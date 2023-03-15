@@ -11,10 +11,10 @@ do
 {
 	Clear-Host
 	
-	$satData = Invoke-WebRequest 'http://127.0.0.1:14002/api/sno/satellites' | ConvertFrom-Json
-	$SNOdata = Invoke-WebRequest 'http://127.0.0.1:14002/api/sno' | ConvertFrom-Json
-	$payData = Invoke-WebRequest 'http://127.0.0.1:14002/api/sno/estimated-payout' | ConvertFrom-Json
-	$ver = Invoke-WebRequest 'https://api.github.com/repos/storj/storj/releases' | ConvertFrom-Json
+	$satData = Invoke-WebRequest 'http://127.0.0.1:14001/api/sno/satellites' | ConvertFrom-Json
+	$SNOdata = Invoke-WebRequest 'http://127.0.0.1:14001/api/sno' | ConvertFrom-Json
+	$payData = Invoke-WebRequest 'http://127.0.0.1:14001/api/sno/estimated-payout' | ConvertFrom-Json
+#	$ver = Invoke-WebRequest 'https://api.github.com/repos/storj/storj/releases' | ConvertFrom-Json
 	$tokenData = Invoke-WebRequest 'https://api.coingecko.com/api/v3/coins/ethereum/contract/0xB64ef51C888972c908CFacf59B47C1AfBC0Ab8aC' | ConvertFrom-Json
 	
 	# Get Etherscan.io API key
@@ -44,10 +44,10 @@ do
 	iF($SNOdata.quicStatus -eq "OK") { $fontColor = "Green" } else { $fontColor="Red" }
 	Write-Host "Time since last QUIC ping :" -ForegroundColor Cyan -NoNewline; Write-Host $quicUptime.Days"Days" $quicUptime.Hours"Hours" $quicUptime.Minutes"Mins" $quicUptime.Seconds"Secs Ago | " -NoNewline; Write-Host "QUIC status: " -ForegroundColor Cyan -NoNewline; Write-Host $SNOdata.quicStatus -ForegroundColor $fontColor -NoNewline; Write-Host " | " -NoNewline; Write-Host "Configured Port: " -ForegroundColor Cyan -NoNewline; Write-Host $SNOdata.configuredPort
 	Write-Host "_____________________________________________________________________________________________________________________"
-	Write-Host "`t   Current |`tAllowed  |`t Latest Release |`tLatest Release Published on | Is version uptodate?" -ForegroundColor Cyan
-	if ($SNOdata.upToDate -eq "True") { $fontColor = "Green" }
-	else { $fontColor = "Red" }
-	Write-Host "Version  :" $SNOdata.version " |`t" $SNOdata.allowedVersion " |`t" $ver[0].name "`t|`t" $ver[0].published_at "`t    |  " -NoNewline; Write-Host $SNOdata.upToDate -ForegroundColor $fontColor
+#	Write-Host "`t   Current |`tAllowed  |`t Latest Release |`tLatest Release Published on | Is version uptodate?" -ForegroundColor Cyan
+#	if ($SNOdata.upToDate -eq "True") { $fontColor = "Green" }
+#	else { $fontColor = "Red" }
+#	Write-Host "Version  :" $SNOdata.version " |`t" $SNOdata.allowedVersion " |`t" $ver[0].name "`t|`t" $ver[0].published_at "`t    |  " -NoNewline; Write-Host $SNOdata.upToDate -ForegroundColor $fontColor
 	Write-Host "________________________________________________________________________________________________________"
 	Write-Host "`t`t Used(GB)`t  |  Allocated(GB) |`t Trash(GB) |`t Overused(GB) |`t Available(GB)" -ForegroundColor Cyan
 	Write-Host "DiskSpace: `t" ([math]::round($SNOdata.diskSpace.used/1000000000, 3)) "`t  |`t" ([math]::round($SNOdata.diskSpace.available/1000000000, 3)) "`t   |`t" ([math]::round($SNOdata.diskSpace.trash/1000000000, 3)) "  |`t " ([math]::Round($SNOdata.diskSpace.overused/1000000000, 3)) "`t      |`t" (([math]::round($SNOdata.diskSpace.available/1000000000, 3)) -(([math]::round($SNOdata.diskSpace.used/1000000000, 3)) + ([math]::round($SNOdata.diskSpace.trash/1000000000, 3))) )
