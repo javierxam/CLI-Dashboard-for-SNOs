@@ -40,7 +40,7 @@ do
 	$SNO3data = Invoke-WebRequest 'http://127.0.0.1:14003/api/sno' | ConvertFrom-Json
 	$pay3Data = Invoke-WebRequest 'http://127.0.0.1:14003/api/sno/estimated-payout' | ConvertFrom-Json
 
-	Write-Host "NODO2`t      " ([math]::round($SNO3data.diskSpace.used/1000000000)) "`t"-NoNewline
+	Write-Host "NODO3`t      " ([math]::round($SNO3data.diskSpace.used/1000000000)) "`t"-NoNewline
 	Write-Host ([math]::round($SNO3data.diskSpace.available/1000000000)) "`t"-NoNewline
 	Write-Host ([math]::round($SNO3data.diskSpace.trash/1000000000)) "`t"-NoNewline
 	Write-Host (([math]::round($SNO3data.diskSpace.available/1000000000)) -(([math]::round($SNO3data.diskSpace.used/1000000000)) + ([math]::round($SNO3data.diskSpace.trash/1000000000))) )"`t"-NoNewline
@@ -54,7 +54,7 @@ do
 	$SNO4data = Invoke-WebRequest 'http://127.0.0.1:14004/api/sno' | ConvertFrom-Json
 	$pay4Data = Invoke-WebRequest 'http://127.0.0.1:14004/api/sno/estimated-payout' | ConvertFrom-Json
 
-	Write-Host "NODO2`t      " ([math]::round($SNO4data.diskSpace.used/1000000000)) "`t"-NoNewline
+	Write-Host "NODO4`t      " ([math]::round($SNO4data.diskSpace.used/1000000000)) "`t"-NoNewline
 	Write-Host ([math]::round($SNO4data.diskSpace.available/1000000000)) "`t"-NoNewline
 	Write-Host ([math]::round($SNO4data.diskSpace.trash/1000000000)) "`t"-NoNewline
 	Write-Host (([math]::round($SNO4data.diskSpace.available/1000000000)) -(([math]::round($SNO4data.diskSpace.used/1000000000)) + ([math]::round($SNO4data.diskSpace.trash/1000000000))) )"`t"-NoNewline
